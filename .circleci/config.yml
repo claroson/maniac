@@ -11,7 +11,7 @@ jobs:
     steps:
       - node/install
       - checkout
-      - run: "npm install puppeteer@20.7.4 && node node_modules/puppeteer/install.js && node index.js" 
+      - run: "npm install puppeteer && node index.js" 
 workflows:
   example-workflow:
     jobs:
