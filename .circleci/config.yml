@@ -1,0 +1,18 @@
+version: 2.1
+orbs:
+  node: circleci/node@5.1.0
+# Define a job to be invoked later in a workflow.
+
+jobs:
+  build-test:
+    docker:
+      # replace with your preferred image
+      - image: cimg/base:stable
+    steps:
+      - node/install
+      - checkout
+      - run: "npm install puppeteer@20.7.4 && node node_modules/puppeteer/install.js && node index.js" 
+workflows:
+  example-workflow:
+    jobs:
+      - build-test
